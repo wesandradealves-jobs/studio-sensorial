@@ -1,0 +1,79 @@
+@import './tools/_mixins'  
+@import './tools/_colors'  
+
+body,html
+	min-height: 100vh
+	width: 100%
+	min-width: 320px
+	scroll-behavior: smooth
+	overflow: hidden
+	-webkit-font-smoothing: antialiased
+	font-family: 'Comfortaa', cursive
+	*
+		-webkit-font-smoothing: inherit
+		font-family: inherit
+	.fade-enter-active,
+	.fade-leave-active 
+		transition-duration: 0.3s
+		transition-property: opacity
+		transition-timing-function: ease
+	.fade-enter,
+	.fade-leave-active 
+		opacity: 0
+	#nprogress
+		z-index: 99999
+		.bar
+			background: white
+		.spinner
+			top: 0
+			right: 0
+			width: 100%
+			height: 100%
+			display: flex
+			flex-flow: column
+			justify-content: center
+			align-items: center
+			background-color: transparentize(white, .1)
+			&-icon
+				border-top-color: $lightblue1
+				border-left-color: $lightblue1	
+				height: 40px
+				width: 40px								
+	&.nprogress-busy
+		#wrap 
+			opacity: .3
+			pointer-events: none 
+			* 
+				pointer-events: inherit		
+	#wrap 
+		transition: 1000ms linear all
+		display: flex
+		flex-flow: column
+		justify-content: flex-start
+		height: 100%
+		width: inherit
+		overflow: inherit
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+		.__rail-is-vertical
+			z-index: 9999!important
+			background: white!important
+			right:0!important
+			bottom:0!important			
+		.main 
+			overflow: inherit
+		.main 
+			flex: 1		
+			padding-top: 216px		
+			+mq(430px, max)
+				padding-top: 207px
+		.container
+			margin: 0 auto
+			padding-left: 45px
+			padding-right: 45px
+			max-width: 1440px
+			+mq(814px, max)
+				padding-left: 15px
+				padding-right: 15px

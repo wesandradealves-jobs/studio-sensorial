@@ -1,0 +1,170 @@
+@import '../../../assets/sass/tools/_mixins' 
+@import '../../../assets/sass/tools/_colors'
+
+@keyframes topOpacity
+    0% 
+        top: -300px
+        opacity: 0 
+    100% 
+        top: 0
+        opacity: 1 
+
+.pg-home
+	.main 
+		section 
+			+mq(1024px, min)
+				&.animated 
+					.bubbles
+						>* 
+			                @for $i from 1 through 3
+			                    &:nth-child(#{$i})
+			                        +animation(topOpacity,(10s*$i)/50)    
+			&:not(:first-of-type)
+				transition: 500ms ease all
+				opacity: 0
+				&.animated
+					opacity: 1
+	.blog
+		.VueCarousel
+			margin: 45px -15px 0
+			.post-card
+				padding: 0 15px
+	.equipe
+		.container 
+			display: flex 
+			flex-flow: row wrap 
+			justify-content: space-between
+			align-items: center
+			+mq(814px, max)
+				flex-flow: column wrap
+			.section-title
+				flex: 0 0 auto 
+				width: 100%
+				margin-bottom: 45px
+			>div 
+				flex: 0 0 auto 
+				&:first-of-type
+					width: 60% 
+					+mq(814px, max)
+						width: 100%
+					& + * 
+						flex: 1
+						padding-left: 30px
+						+mq(814px, max)
+							padding-left: 0
+							padding-top: 30px
+						p 
+							text-align: justify
+							+mq(814px, max)
+								max-width: 414px
+								margin: 0 auto
+				.VueCarousel
+					margin: 0 -25px
+					+mq(960px, max)
+						margin: 0 -15px
+					.team-inner
+						padding: 25px 25px 0
+						+mq(960px, max)
+							padding: 25px 15px 0
+						cursor: pointer
+						&.active
+							.thumbnail 
+								transform: scale(1.1)
+							    // box-shadow: 0px 0px 35px -5px steelblue
+						.thumbnail
+							display: block 
+							padding: 0 0 100%
+							width: 100%
+							margin: 0 auto
+							border-radius: 999px
+							background-repeat: no-repeat
+							background-size: cover
+							background-position: center 0 
+							transition: all 1000ms ease
+							// box-shadow: 0px 0px 0 -5px steelblue
+						text-align: center 
+						h3 
+							font-size: 1.4rem
+							display: block 
+							margin-top: 15px
+							+mq(960px, max)
+								font-size: 1rem
+								+mq(814px, max)
+									font-size: 1.4rem
+							small
+								display: block 
+								font-size: .8rem
+	.gallery
+		margin-top: 45px
+	.programas-de-tratamento	
+		.bubbles
+			svg 
+				*
+					stroke: $yellow
+		.section-title
+			span 
+				color: $yellow
+	.nossos-servicos
+		.bubbles
+			svg 
+				*
+					stroke: $lightblue1
+			>*
+				&:hover 
+					.thumbnail
+						.ico
+							img 
+								filter: invert(1) grayscale(1) brightness(5)
+							svg
+								*
+									stroke: white 
+						.bubble 
+							svg *
+								stroke: transparent
+								fill: $lightblue1
+	.o-studio
+		+mq(1024px, min)
+			&.animated 
+				.container 
+					>div
+						&:first-of-type
+							left: 0
+							& + *
+								right: 0
+		.container 
+			display: flex
+			flex-flow: row wrap 
+			justify-content: space-between
+			align-items: flex-start
+			p 
+				padding-left: 30px
+				+mq(960px, max)
+					padding-left: 0
+				line-height: 1.6
+				margin: 0 auto 30px
+				font-size: .9rem	
+				& ~ a 
+					margin-left: 30px
+					color: $lightblue1
+					font-size: 1.4rem
+					font-weight: 300
+			>div 
+				flex: 1
+				transition: 500ms ease all
+				position: relative
+				&:first-of-type
+					+mq(1024px, min)
+						left: -100vw
+					padding-right: 30px
+					+mq(960px, max)
+						padding-right: 0
+					& + * 
+						+mq(1024px, min)
+							right: -100vw
+						padding-left: 30px
+						+mq(960px, max)
+							display: none
+				>img 
+					max-width: 100%
+					display: block 
+					margin: 0 auto

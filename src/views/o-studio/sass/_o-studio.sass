@@ -1,0 +1,60 @@
+@import '../../../assets/sass/tools/_mixins' 
+@import '../../../assets/sass/tools/_colors' 
+
+.pg-o-studio
+	.missao-visao-valores
+		background-color: $yellow
+		.bubbles>* svg *
+			stroke-width: 0!important
+			fill: $lightblue1
+	.webdoor
+		.VueCarousel-slide 
+			.item-inner 
+				.container
+					max-height: initial
+					height: 0
+					padding: 0 0 50%
+	.publico,
+	.o-studio
+		p 
+			padding-left: 30px
+			+mq(960px, max)
+				padding-left: 0
+			line-height: 1.6
+			margin: 0 auto 30px
+			font-size: .9rem
+	.metodologia-de-intervencao
+		.container 
+			padding-top: 150px
+			padding-bottom: 150px
+			img 
+				display: block
+				margin: 0 auto
+				max-width: 100%
+	.publico
+		.container
+			display: flex
+			flex-flow: row wrap 
+			align-items: center
+			.section-title
+				flex: 0 0 auto 
+				width: 100%
+			>div 
+				&:first-of-type
+					flex: 0 0 auto
+					padding-right: 30px
+					+mq(614px, max)
+						padding-right: 0
+					& + div 
+						flex: 1
+						+mq(614px, max)
+							display: none
+						img
+							width: auto 
+							max-width: 100%
+							margin: 0 auto
+				p 
+					margin: 0
+					font-size: 1.4rem
+					+mq(814px, max)
+						font-size: 1rem

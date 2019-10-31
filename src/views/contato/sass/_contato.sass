@@ -1,0 +1,89 @@
+@import '../../../assets/sass/tools/_mixins' 
+@import '../../../assets/sass/tools/_colors'
+
+.contate-o-studio
+	.contact-form
+		padding: 0 20px
+		+mq(814px, max)
+			padding: 0 15px 0 0
+		.btn 
+			min-width: 140px
+			margin-left: auto
+			display: block
+			text-transform: uppercase
+			letter-spacing: 2px
+		>div 
+			display: flex 
+			flex-flow: row wrap 
+			justify-content: space-between
+			> * 
+				flex: 1
+				+mq(568px, max)
+					flex: 0 0 auto 
+					width: 50%
+					&:last-child
+						width: 100%
+				padding: 0 7.5px 15px
+				label
+					font-weight: bold
+					font-size: 1rem	
+					margin-bottom: 4px
+				label, input 
+					display: block
+				input, textarea
+					border-radius: 5px
+					overflow: hidden
+					resize: none
+					width: 100%
+					border: 2px gray solid 
+					padding: 5px 10px
+					font-size: .8rem
+				textarea 
+					height: 90px
+
+.contatos
+	background-color: $lightblue2
+	.container
+		display: flex 
+		flex-flow: row wrap 
+		justify-content: space-between 
+		align-items: center
+		padding-top: 45px
+		padding-bottom: 45px
+		+mq(614px, max)
+			padding-right: 35px!important
+		#map 
+			padding: 0 0 50%
+			border-radius: 30px
+		>div 
+			flex: 1
+			+mq(614px, max)
+				&:first-of-type
+					flex: 0 0 auto 
+					width: 100%
+					margin-bottom: 45px
+			ul 
+				li 
+					display: flex 
+					flex-flow: row wrap 
+					justify-content: space-between
+					align-items: center
+					&:not(:last-child)
+						margin-bottom: 15px 
+					p 
+						flex: 1 
+						line-height: 1.4
+						font-size: .8rem
+					i 
+						flex: 0 0 auto
+						font-size: 22px
+						width: 22px
+						height: 22px
+						line-height: 22px
+						margin-right: 10px
+						text-align: center
+			&:last-of-type
+				padding-left: 30px
+				+mq(614px, max)
+					padding-left: 0
+				color: white

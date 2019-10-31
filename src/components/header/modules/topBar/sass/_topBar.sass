@@ -1,0 +1,40 @@
+@import '../../../../assets/sass/tools/_mixins' 
+@import '../../../../assets/sass/tools/_colors'
+
+.topbar
+	background-color: $lightblue1
+	color: white
+	.container
+		padding-top: 10px
+		padding-bottom: 10px 
+		display: flex 
+		flex-flow: row wrap 
+		justify-content: flex-end
+		+mq(430px, max)
+			flex-flow: column
+			justify-content: center
+			align-items: center
+		ul 
+			display: inherit
+			flex-flow: inherit 
+			justify-content: inherit
+			align-items: center
+			>li 
+				font-size: .8rem
+				i 
+					display: inline-block 
+					vertical-align: middle
+					margin-right: 4px 
+					height: 30px
+					width: 30px
+					background-color: white
+					color: $lightblue1
+					font-size: 15px!important
+					line-height: 30px
+					text-align: center
+					border-radius: 999px
+				&:not(:last-child)
+					padding-right: 45px
+					+mq(430px, max)
+						padding-right: 0
+

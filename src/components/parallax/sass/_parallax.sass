@@ -1,0 +1,38 @@
+@import '../../../assets/sass/tools/_mixins'
+
+.parallax
+	display: block
+	background-position: center center
+	background-attachment: fixed
+	background-repeat: no-repeat
+	background-size: cover
+	.container
+		padding: 0 0 30%!important
+		+mq(814px, max)
+			padding: 0 0 50%!important
+		height: 0
+		position: relative
+		h3
+			font-weight: 300
+			color: white
+			font-size: 2rem
+			text-align: center
+			padding: 0 45px
+			+mq(814px, max)
+				font-size: 1.4rem
+		&::after,
+		>div
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			display: flex 
+			flex-flow: column 
+			justify-content: center
+			align-items: center
+			z-index: 2
+		&::after
+			z-index: 1
+			background-color: rgba(0,0,0,.35)
+			content: ''

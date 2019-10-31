@@ -1,0 +1,61 @@
+@import '../../../assets/sass/tools/_mixins' 
+@import '../../../assets/sass/tools/_colors'
+
+$bubbleSize: 266px
+$icoSize: $bubbleSize/2
+
+.bubbles
+	display: flex 
+	flex-flow: row wrap 
+	justify-content: center
+	align-items: stretch
+	margin: 60px auto 0
+	text-align: center 
+	>*
+		width: 33.333%
+		+mq(870px, max)
+			width: 50%!important
+			&:not(:last-child)
+				margin-bottom: 45px				
+			+mq(568px, max)
+				width: 100%!important			
+		h3
+			margin: 25px auto 15px
+			font-size: 1.5rem
+			text-transform: uppercase
+			+mq(960px, max)
+				font-size: 1.2rem
+			& ~ p 
+				max-width: 280px
+				margin: 0 auto
+				line-height: 1.6
+				font-size: .8rem	
+		svg 
+			*
+				fill: transparent		
+		.thumbnail
+			position: relative
+			display: flex
+			flex-flow: row wrap
+			justify-content: center
+			align-items: center
+			padding-bottom: 40px
+			.ico
+				position: absolute 
+				z-index: 2
+				svg
+					height: $icoSize
+					width: auto
+					*
+						stroke-width: 5px
+			.bubble 
+				display: block 
+				margin: 0 auto 
+				width: 266px
+				transform: rotate(45deg)
+				z-index: 1
+				svg 
+					height: $bubbleSize
+					width: auto
+					*
+						stroke-width: 10px

@@ -1,0 +1,67 @@
+@import '../../../assets/sass/tools/_mixins' 
+@import '../../../assets/sass/tools/_colors'
+
+.navigation
+	.hamburger
+		padding: 0
+	&.-mobile
+		position: fixed
+		top: 50px
+		transition: all 500ms ease
+		+mq(435px, max)
+			top: 80px
+		z-index: 1000
+		height: 100%
+		width: 280px
+		left: -100vw
+		&.opened
+			left: 0
+		background-color: rgba(0,0,0,.35)	
+		>ul 
+			>li 
+				display: block 
+				padding: 10px 15px
+				color: white
+				width: 100%
+				&:not(:last-of-type)
+					border-bottom: 1px rgba(255,255,255,.1) solid
+	&.-main 
+		flex: 1
+		padding: 0 45px
+		+mq(540px, max)
+			padding-right: 0
+		>ul 
+			justify-content: flex-end
+			>li
+				text-transform: uppercase
+				font-size: .8rem
+				>a 
+					&.current
+						color: $lightblue1
+				&:not(:last-child):not(:nth-last-child(2))
+					margin-right: 35px		
+				&:not(:last-child)
+					+mq(1240px, max)
+						display: none	
+				&:last-child
+					display: none	
+					+mq(1240px, max)
+						display: inline-flex
+	&.-social 
+		+mq(540px, max)
+			display: none
+		>ul 
+			justify-content: flex-end
+			>li
+				color: $lightblue1
+				>a 
+					text-decoration: none!important
+				&:hover 
+					color: darken($lightblue1, 15%) 
+				font-size: 19px
+				&:not(:last-child)
+					margin-right: 10px
+	>ul 
+		display: flex 
+		flex-flow: row wrap 
+		align-items: center
